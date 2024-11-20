@@ -1,0 +1,374 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(29, 28, 28);
+    /*background-color: #2e1a47;*/
+
+}
+
+p, h1, h2, h3, h4, h5{
+    color: white;
+    text-align: center;
+}
+.parallax {
+    background-image: url('background.jpg');
+    height: 100vh;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.hero {
+    background-color: #307fce;
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.section-title {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: #2c3e50;
+}
+
+.form-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+    border: 2px solid #315e4a;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #8D44F2;
+}
+
+.navbar-logo {
+    width: 80px;
+    height: auto;
+    margin-right: 15px;
+    position: relative;
+    left: -10px;
+}
+
+.custom-carousel {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.custom-carousel .carousel-inner img {
+    height: 300px;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.carousel-item {
+    transition: opacity 1s ease;
+}
+
+.cta-section {
+    background-color: #222d38;
+    color: rgb(255, 0, 0);
+    padding: 60px 0;
+}
+
+.cta-section .btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.cta-section .btn:hover {
+    background: linear-gradient(45deg, #3A29A6, #A463BF);
+    color: white;
+
+}
+
+.testimonios {
+    background-color: rgb(29, 28, 28);
+}
+
+.footer {
+    background-color: #8D44F2;
+    color: #ffffff;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.footer h3, .footer h5 {
+    color:#A463BF;
+    font-weight: bold;
+}
+
+.footer p, .footer li {
+    color: #ffffff;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.footer ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer li::before {
+    content: "✔";
+    margin-right: 8px;
+}
+
+.footer a {
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para el ícono flotante de WhatsApp */
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1050; /* Asegura que el ícono esté sobre otros elementos */
+}
+
+.whatsapp-icon img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Estilos para el popup de WhatsApp */
+.whatsapp-popup {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 300px;
+    background-color: #25D366;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: none; /* Oculto por defecto */
+    color: white;
+    font-family: Arial, sans-serif;
+    z-index: 1040; /* Asegura que el popup esté sobre el contenido pero por debajo del ícono */
+}
+
+.popup-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #128C7E;
+}
+
+.whatsapp-logo {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.popup-header span {
+    font-weight: bold;
+    flex-grow: 1;
+}
+
+.close-popup {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.popup-body {
+    padding: 15px;
+}
+
+.popup-body p {
+    margin: 0;
+}
+
+.open-chat-btn {
+    display: block;
+    text-align: center;
+    background-color: white;
+    color: #25D366;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    border-top: 1px solid #ddd;
+}
+
+.open-chat-btn span {
+    font-size: 18px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer .col-md-4 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Aseguramos que el logo tenga un tamaño adecuado */
+.footer-logo {
+    max-width: 150px; /* Ajusta el tamaño máximo del logo */
+    width: auto; /* Mantiene la proporción original */
+    height: auto; /* Mantiene la proporción original */
+    display: block; /* Asegura que el logo sea un bloque */
+    /* Eliminamos el margen de centro */
+}
+
+/* Ajustes para la sección del footer */
+.logo-footer {
+    padding-top: 15px; /* Espaciado superior para separar el logo de los otros elementos */
+    text-align: left; /* Alinea el logo a la izquierda */
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 767px) {
+    .footer-logo {
+        max-width: 120px; /* Tamaño más pequeño en pantallas pequeñas */
+    }
+}
+
+/* Estilos personalizados para el modal */
+.modal-content {
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+}
+
+.modal-header, .modal-body, .modal-footer {
+    background-color: #000; /* Fondo negro en las secciones */
+}
+
+.modal-title {
+    color: #fff; /* Título en blanco */
+}
+
+.btn-secondary {
+    background-color: #333; /* Color de fondo del botón cerrar */
+    color: #fff; /* Color del texto */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Botón proceder a pago con fondo azul */
+    color: #fff; /* Texto blanco */
+}
+
+.btn-close {
+    color: #fff; /* Icono de cerrar en blanco */
+}
+
+.card {
+    background-color: rgb(29, 28, 28); /* Fondo oscuro */
+    color: #fff; /* Texto blanco */
+    border: none;
+    box-shadow: 0 4px 8px #3A29A6;
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+.card-header {
+    background: linear-gradient(45deg, #3A29A6, #A463BF); /* Fondo del encabezado de cada card */
+}
+
+.card-body {
+    background-color: rgb(29, 28, 28); /* Fondo oscuro para el cuerpo del card */
+}
+
+.card-title {
+    color: #fff; /* Texto blanco para el título */
+}
+
+.card-text {
+    color: #ddd; /* Texto de descripción en gris claro */
+}
+
+.card .btn {
+    background-color: #555; /* Botones con fondo gris oscuro */
+    color: #fff; /* Texto blanco en los botones */
+}
+
+.card .btn:hover {
+    background-color: #777; /* Cambio de color en el hover de los botones */
+}
+
+.card .plan-details button {
+    background-color: #007bff; /* Botón "Agregar Plan" con fondo azul */
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.card .plan-details button:hover {
+    background-color: #0056b3; /* Cambio de color en hover para "Agregar Plan" */
+}
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.form-container{
+    background-color: rgb(29, 28, 28);
+    color: white;
+    border-color: #3A29A6;
+}
+
+/* Estilo para el botón con degradado */
+.btn-gradient {
+    background: linear-gradient(45deg, #3A29A6, #A463BF); /* Degradado de colores */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño del texto */
+    font-weight: bold; /* Negrita para el texto */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Aparece el puntero de mano al pasar por encima */
+    transition: background 0.3s ease; /* Transición suave para el cambio de fondo */
+}
+
+/* Efecto de hover */
+.btn-gradient:hover {
+    background: linear-gradient(45deg, #3A29A6, #A463BF);
+}
+
+.cta-section{
+    background: linear-gradient(45deg, #3A29A6, #A463BF);
+}

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/logo.png" type="image/png">
+    <title>LevelUP Tech</title>
+    <!-- CSS de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+<!-- Barra de navegación principal -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <!-- Logo de la empresa en la navegación -->
+        <img src="img/logo.png" alt="Logo" class="navbar-logo">
+        <a class="navbar-brand" href="#">LevelUP Tech</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Links de navegación -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#servicios">Servicios</a>
+                </li>
+                <li class="nav-item">
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="modal" data-bs-target="#reservationModal">Agendar</a>
+                </li>
+                    <!-- Modal del Formulario de Reserva -->
+                    <div class="modal fade" id="reservationModal" tabindex="-1" aria-labelledby="reservationModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="reservationModalLabel">Formulario de Reserva</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-container">
+                                        <!-- Paso 1: Servicio -->
+                                        <br>
+                                        <div class="form-step active" id="step1">
+                                            <h2>Servicio</h2>
+                                            <label for="servicio">* Servicio:</label>
+                                            <select id="servicio">
+                                                <option value="piercing-ceja">Mantenimiento</option>
+                                                <option value="piercing-ceja">Reparación</option>
+                                                <option value="piercing-ceja">Actualización</option>
+                                                <option value="piercing-ceja">Consultoría</option>
+                                            </select>
+                                            <br>
+                                            <label for="consultor">* Consultor:</label>
+                                            <select id="consultor">
+                                                <option value="Tomás Espejo">Tomás Espejo</option>
+                                                <option value="Juan Villagran">Juan Villagran</option>
+                                            </select>
+                                        <br>
+                                            <label for="ubicacion">* Ubicación:</label>
+                                            <select id="ubicacion" name="ubicacion">
+                                                <option value="Puente Alto">Puente Alto</option>
+                                                <option value="San Jose De Maipo">San Jose De Maipo</option>
+                                                <option value="Macul">Macul</option>
+                                                <option value="Online">Online</option>
+                                            </select>
+                                        </div>
+                                        <br>
+                                        <!-- Paso 2: Fecha y Hora -->
+                                        <div class="form-step" id="step2">
+                                            <h2>Fecha y Hora</h2>
+                                            <label for="fecha">* Fecha:</label>
+                                            <input type="date" id="fecha">
+                                            <br>
+                                            <label for="hora">Selecciona un horario:</label>
+                                            <select id="hora" name="horario">
+                                                <!-- Opciones de horarios -->
+                                                <option value="09:00-09:30">09:00 - 09:30</option>
+                                                <option value="09:30-10:00">09:30 - 10:00</option>
+                                                <option value="10:00-10:30">10:00 - 10:30</option>
+                                                <option value="10:30-11:00">10:30 - 11:00</option>
+                                                <option value="11:00-11:30">11:00 - 11:30</option>
+                                                <option value="11:30-12:00">11:30 - 12:00</option>
+                                                <option value="12:00-12:30">12:00 - 12:30</option>
+                                                <option value="12:30-13:00">12:30 - 13:00</option>
+                                                <option value="13:00-13:30">13:00 - 13:30</option>
+                                                <option value="13:30-14:00">13:30 - 14:00</option>
+                                                <option value="14:00-14:30">14:00 - 14:30</option>
+                                                <option value="14:30-15:00">14:30 - 15:00</option>
+                                                <option value="15:00-15:30">15:00 - 15:30</option>
+                                                <option value="15:30-16:00">15:30 - 16:00</option>
+                                                <option value="16:00-16:30">16:00 - 16:30</option>
+                                                <option value="16:30-17:00">16:30 - 17:00</option>
+                                                <option value="17:00-17:30">17:00 - 17:30</option>
+                                                <option value="17:30-18:00">17:30 - 18:00</option>
+                                                <!-- Más opciones aquí -->
+                                        <br>
+                                    </select>
+                                        <br>
+                                    </div>
+                                        <!-- Paso 3: Información Personal -->
+                                        <div class="form-step" id="step3">
+                                            <h2>Información Personal</h2>
+                                            <label for="nombre">* Nombre:</label>
+                                            <input type="text" id="nombre" required>
+                                            <br>
+                                            <label for="apellido">* Apellido:</label>
+                                            <input type="text" id="apellido" required>
+                                            <br>
+                                            <label for="correo">* Correo Electrónico:</label>
+                                            <input type="email" id="correo" required>
+                                            <br>
+                                        </div>
+                                        <!-- Paso 4: Método de Pago -->
+                                        <div class="form-step" id="step4">
+                                            <h2>Método de Pago</h2>
+                                            <label for="pago">* Método de Pago:</label>
+                                            <select id="pago">
+                                                <option value="tarjeta">Tarjeta de Crédito/Débito</option>
+                                                <option value="transferencia">Transferencia Bancaria</option>
+                                            </select>
+                                            <br>
+                                            <button class="btn-gradient">Finalizar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#precios">Precios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contacto">Contacto</a>
+                </li>
+                                    <!-- Carrito de compras modal -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="cartButton">
+                            🛒 (<span id="cart-count">0</span>)
+                        </a>
+                    </li>
+                    <!-- Modal del Carrito de Compras -->
+                    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="cartModalLabel">Tu Carrito de Compras</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <ul id="cart-items" class="list-unstyled">
+                                        <li><p class="text-center" id="cart-empty-message">El carrito está vacío</p></li>
+                                    </ul>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn-gradient" data-bs-dismiss="modal">Cerrar</button>
+                                    <button type="button" class="btn-gradient" id="checkoutBtn">Proceder a Pago</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<br>
+
+<!-- Popup de WhatsApp para contactar con soporte -->
+<div class="whatsapp-popup" id="whatsappPopup">
+    <div class="popup-header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp logo" class="whatsapp-logo">
+        <span>WhatsApp</span>
+        <span class="close-popup" onclick="hidePopup()">×</span>
+    </div>
+    <div class="popup-body">
+        <p>Hola 👋<br>¿Podemos ayudarte?</p>
+    </div>
+    <!-- Enlace directo a WhatsApp -->
+    <a href="https://wa.me/+56977106192" target="_blank" class="open-chat-btn">
+        Open chat <span>➔</span>
+    </a>
+</div>
+
+<!-- Icono flotante de WhatsApp para abrir el popup -->
+<div class="whatsapp-icon" onclick="togglePopup()" id="popupIcon">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp icon">
+</div>
+
+<!-- Carrusel de imágenes -->
+<div id="carouselExampleControlsNoTouching" class="carousel slide custom-carousel" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <!-- Primera imagen del carrusel (activa por defecto) -->
+        <div class="carousel-item active">
+            <img src="img/pc1.jpg" class="d-block w-100" alt="Imagen 1">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Limpieza de Equipos</h5>
+                <p>Limpiamos sus equipos de forma segura, rápida y confiable.</p>
+            </div>
+        </div>
+        <!-- Segunda imagen del carrusel -->
+        <div class="carousel-item">
+            <img src="img/pc2.jpg" class="d-block w-100" alt="Imagen 2">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Reparación de Equipos</h5>
+                <p>Reparamos sus equipos acorde a sus necesidades.</p>
+            </div>
+        </div>
+        <!-- Tercera imagen del carrusel -->
+        <div class="carousel-item">
+            <img src="img/pc3.jpg" class="d-block w-100" alt="Imagen 3">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Diagnósticos de Equipos</h5>
+                <p>Diagnosticamos sus equipos de forma segura y rápida.</p>
+            </div>
+        </div>
+        <!-- Cuarta imagen del carrusel -->
+        <div class="carousel-item">
+            <img src="img/pc4.jpg" class="d-block w-100" alt="Imagen 4">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Mantenimiento Preventivo</h5>
+                <p>Le damos su respectivo mantenimiento a su máquina regalona.</p>
+            </div>
+        </div>
+    </div>
+    <!-- Controles del carrusel para cambiar de imagen -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+
+<!-- Precios Section -->
+<section id="precios" class="py-5">
+    <div class="container">
+        <h2 class="section-title">Nuestros Precios</h2>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <div class="card plan-card" onclick="togglePlan(this)">
+                    <div class="card-header bg-primary text-white">
+                        Básico
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">$10.000/mes</h5>
+                        <p class="card-text">Plan básico.</p>
+                        <button class="btn-gradient">Detalles</button>
+                        <div class="plan-details" style="display: none;">
+                            <ul>
+                                <br>
+                                <li>Soporte técnico por email</li>
+                                <li>Asesoría básica</li>
+                                <br>
+                                <button class="btn-gradient" onclick="addItemToCart('Plan Básico', 10000)">Agregar Plan</button>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card plan-card" onclick="togglePlan(this)">
+                    <div class="card-header bg-success text-white">
+                        Avanzado
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">$20.000/mes</h5>
+                        <p class="card-text">Plan Avanzado.</p>
+                        <button class="btn-gradient">Detalles</button>
+                        <div class="plan-details" style="display: none;">
+                            <ul>
+                                <br>
+                                <li>Soporte técnico prioritario</li>
+                                <li>Actualizaciones semanales</li>
+                                <li>Asesoría personalizada</li>
+                                <li>Descuentos en servicios adicionales</li>
+                                <br>
+                                <button class="btn-gradient" onclick="addItemToCart('Plan Avanzado', 20000)">Agregar Plan</button>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card plan-card" onclick="togglePlan(this)">
+                    <div class="card-header bg-warning text-white">
+                        Premium
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">$30.000/mes</h5>
+                        <p class="card-text">Plan Premium.</p>
+                        <button class="btn-gradient">Detalles</button>
+                        <div class="plan-details" style="display: none;">
+                            <ul>
+                                <br>
+                                <li>Asesoría continua</li>
+                                <li>Actualizaciones diarias</li>
+                                <li>Seguridad avanzada</li>
+                                <li>Soporte técnico 24/7</li>
+                                <br>
+                                <button class="btn-gradient" onclick="addItemToCart('Plan Premium', 30000)">Agregar Plan</button>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Formulario para solicitar cotización -->
+<div class="form-container">
+    <h2>Solicitar Cotización</h2>
+    <form id="cotizacionForm">
+        <!-- Campo de nombre -->
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <!-- Campo de correo electrónico -->
+        <label for="correo">Correo Electrónico:</label>
+        <input type="email" id="correo" name="correo" required>
+
+        <!-- Selección de servicio requerido -->
+        <label for="servicio">Servicio Requerido:</label>
+        <select id="servicio" name="servicio" required>
+            <option value="">Seleccione un servicio</option>
+            <option value="mantenimiento">Mantenimiento</option>
+            <option value="reparacion">Reparación</option>
+            <option value="consultoria">Consultoría</option>
+            <option value="venta">Venta de Equipos</option>
+        </select>
+
+        <!-- Campo de mensaje -->
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+        <!-- Botón para enviar el formulario de cotización -->
+        <button class="btn-gradient" type="submit">Enviar Cotización</button>
+    </form>
+</div>
+<br>
+<!-- Sección de Testimonios -->
+<section id="testimonios" class="py-5 bg-dark">
+    <div class="testimonios">
+        <br>
+        <h2 class="section-title text-center">Lo que nuestros clientes dicen</h2>
+        <div class="row">
+            <!-- Testimonio de Juan Pérez -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Juan Pérez</h5>
+                        <p class="card-text">"LevelUP Tech resolvió rápidamente el problema de mi computadora. ¡Excelente servicio!"</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonio de Ana Gómez -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Ana Gómez</h5>
+                        <p class="card-text">"Gracias a LevelUP Tech, mi laptop funciona como nueva. Muy profesionales y rápidos."</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonio de Carlos Rodríguez -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Carlos Rodríguez</h5>
+                        <p class="card-text">"Muy recomendados. Me ayudaron a mejorar la velocidad de mi PC de manera eficiente."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sección de Llamada a la Acción (CTA) -->
+<div class="cta-section text-center py-5 bg-primary text-white">
+    <h2>¿Listo para mejorar tu equipo?</h2>
+    <p>Solicita una cotización o agenda tu servicio ahora.</p>
+    <a  data-bs-toggle="modal" data-bs-target="#reservationModal" class="btn btn-light btn-lg">Agendar Servicio</a>
+</div>
+
+<!-- Pie de página -->
+<footer class="footer bg-dark text-light py-5" id="contacto">
+    <div class="container">
+        <div class="row">
+            <!-- Logo y descripción de la empresa -->
+            <div class="col-md-4">
+                <h3>LevelUP Tech</h3>
+                <p>El mejor <em>Servicio Técnico</em> para tu <strong>Notebook o Computador</strong></p>
+                <p>LevelUP Tech cuenta con servicio técnico para notebooks y computadores, a domicilio en Santiago y áreas cercanas. Nuestro personal calificado atiende tanto a particulares como a empresas.</p>
+                <!-- Logo en el pie de página -->
+                <div class="logo-footer text-center mt-3">
+                    <img src="img/logo.png" alt="Logo LevelUP Tech" class="footer-logo">
+                </div>
+            </div>
+            <!-- Sección de Reparaciones -->
+            <div class="col-md-4">
+                <h5>Reparaciones</h5>
+                <ul class="list-unstyled">
+                    <li>✔ Reparación de Notebook</li>
+                    <li>✔ Reparación de Macbook</li>
+                    <li>✔ Reparación de iMac</li>
+                    <li>✔ Reparación de Placas Madres</li>
+                    <li>✔ Cambio de Pantallas</li>
+                    <li>✔ Cambio de Ventiladores</li>
+                    <li>✔ Reparación o cambio de Teclados</li>
+                    <li>✔ Cambio de Baterías</li>
+                    <li>✔ Reparación o cambio de Touchpad</li>
+                </ul>
+            </div>
+                <!-- Sección de Contacto -->
+                <div class="col-md-4">
+                    <h5>Contacto LevelUP Tech</h5>
+                    <p><strong>Email:</strong> contacto@leveluptech.cl</p>
+                    <p><strong>Teléfono:</strong> (2) 452355435</p>
+                    <p><strong>Móvil:</strong> (+56) 968623044</p>
+                    <p><strong>Dirección:</strong> guardiamarina riquelme #075<br>puente alto - Chile</p>
+                    <!-- Redes sociales -->
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/leveluptech" target="_blank">Facebook</a>
+                        <a href="https://twitter.com/leveluptech" target="_blank">Twitter</a>
+                        <a href="https://www.instagram.com/leveluptech" target="_blank">Instagram</a>
+                        <a href="https://www.linkedin.com/company/leveluptech" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Copyright -->
+<footer class="footer">
+    <p>&copy; 2024 LevelUP Tech. Todos los derechos reservados.</p>
+</footer>
+
+<!-- Scripts -->
+<script src="script.js"></script>
+
+<!-- Carga de bibliotecas necesarias -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="img/script.js"></script>
+<script src="img/wts.js"></script>
+</body>
+</html>
